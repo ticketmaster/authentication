@@ -113,16 +113,16 @@ As such, the methods would look like:
 ...
       method:
         - GET
-		- PUT
-		- PATCH
+	- PUT
+	- PATCH
 ...
 # Rule 3 (Administrator roles)
 ...
 	  method:
         - GET
-		- PUT
-		- PATCH
-		- DELETE
+	- PUT
+	- PATCH
+	- DELETE
 ...
 ```
 
