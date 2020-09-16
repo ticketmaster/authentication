@@ -1,0 +1,2 @@
+POST    /api/login  Authentication.Login
+POST    /api/logout  Authentication.Logout

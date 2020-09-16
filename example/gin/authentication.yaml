@@ -1,0 +1,37 @@
+authenticationClient:
+  - provider: memory
+    origin: testOrigin
+    users:
+      - username: test
+        password: testpass
+        name: My Name
+        email: test@test.com
+        roles:
+          - testRole
+          - testRole2
+      - username: test2
+        password: testpass2
+        name: My Name2
+        email: test2@test.com
+        roles:
+          - testRole
+          - testRole3
+authorization:
+  default: deny
+  rules:
+    - ruleType: route
+      route: 
+        - /
+      authorize: allow
+      role: "testRole2"
+      origin: ".*"
+    - ruleType: route
+      route: 
+        - /test/fail
+      authorize: deny
+      role: "testRole2"
+      origin: ".*"
+privateKey: "../../test-certificates/jwt.rsa"
+publicKey: "../../test-certificates/jwt.rsa.pub"
+jwtExpiration: "1h"
+#enableAnonymousAccess: true
