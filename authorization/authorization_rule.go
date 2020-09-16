@@ -1,6 +1,6 @@
 package authorization
 
-import "github.com/tickemaster/authentication/common"
+import "github.com/ticketmaster/authentication/common"
 
 type authorizationRule interface {
 	IsMatch(user *common.User, actions map[string]string) ruleMatch

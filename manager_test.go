@@ -7,8 +7,8 @@ import (
 
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
-	"github.com/tickemaster/authentication/authorization"
-	"github.com/tickemaster/authentication/client"
+	"github.com/ticketmaster/authentication/authorization"
+	"github.com/ticketmaster/authentication/client"
 )
 
 var validManagerConfig = []byte(`

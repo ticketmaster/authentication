@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/tickemaster/authentication/common"
+	"github.com/ticketmaster/authentication/common"
 	"github.com/golang/glog"
 	"github.com/mitchellh/mapstructure"
 )

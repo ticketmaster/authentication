@@ -3,7 +3,7 @@ package authorization
 import (
 	"fmt"
 
-	"github.com/tickemaster/authentication/common"
+	"github.com/ticketmaster/authentication/common"
 	"github.com/golang/glog"
 )
 

@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tickemaster/authentication/authorization"
-	"github.com/tickemaster/authentication/client"
-	"github.com/tickemaster/authentication/common"
+	"github.com/ticketmaster/authentication/authorization"
+	"github.com/ticketmaster/authentication/client"
+	"github.com/ticketmaster/authentication/common"
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/golang/glog"
 	"github.com/spf13/viper"

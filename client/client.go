@@ -1,6 +1,6 @@
 package client
 
-import "github.com/tickemaster/authentication/common"
+import "github.com/ticketmaster/authentication/common"
 
 // Client represents a connection to an LDAP server
 type Client interface {

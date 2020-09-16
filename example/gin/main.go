@@ -8,7 +8,7 @@ import (
 
 	"flag"
 
-	filter "github.com/tickemaster/authentication/gin"
+	filter "github.com/ticketmaster/authentication/gin"
 )
 
 func main() {

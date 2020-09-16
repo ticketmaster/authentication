@@ -1,4 +1,4 @@
-module github.com/tickemaster/authentication
+module github.com/ticketmaster/authentication
 
 go 1.14
 

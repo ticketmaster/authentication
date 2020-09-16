@@ -4,7 +4,7 @@ import (
 	"errors"
 
 	"github.com/revel/revel"
-	module "github.com/tickemaster/authentication/revel"
+	module "github.com/ticketmaster/authentication/revel"
 )
 
 // Authentication is the authentication controller

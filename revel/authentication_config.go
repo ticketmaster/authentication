@@ -3,7 +3,7 @@ package revel
 import (
 	"github.com/revel/revel"
 	"github.com/spf13/viper"
-	"github.com/tickemaster/authentication"
+	"github.com/ticketmaster/authentication"
 )
 
 // AuthenticationConfig is a struct that holds authentication package information

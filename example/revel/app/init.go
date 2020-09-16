@@ -1,7 +1,7 @@
 package app
 
 import (
-	auth "github.com/tickemaster/authentication/revel"
+	auth "github.com/ticketmaster/authentication/revel"
 	"github.com/revel/revel"
 )
 

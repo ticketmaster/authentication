@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/tickemaster/authentication/common"
+	"github.com/ticketmaster/authentication/common"
 	ldap "gopkg.in/ldap.v3"
 )
 

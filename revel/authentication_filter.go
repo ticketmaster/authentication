@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/tickemaster/authentication/common"
+	"github.com/ticketmaster/authentication/common"
 
 	"github.com/revel/revel"
 )

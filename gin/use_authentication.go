@@ -1,7 +1,7 @@
 package gin
 
 import (
-	"github.com/tickemaster/authentication"
+	"github.com/ticketmaster/authentication"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"

@@ -3,7 +3,7 @@ package client
 import (
 	"testing"
 
-	"github.com/tickemaster/authentication/common"
+	"github.com/ticketmaster/authentication/common"
 	"github.com/stretchr/testify/assert"
 )
 
