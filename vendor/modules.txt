@@ -12,20 +12,26 @@ github.com/fsnotify/fsnotify
 ## explicit
 github.com/gin-contrib/sessions
 github.com/gin-contrib/sessions/cookie
-# github.com/gin-contrib/sse v0.0.0-20190125020943-a7658810eb74
-## explicit
+# github.com/gin-contrib/sse v0.1.0
 github.com/gin-contrib/sse
-# github.com/gin-gonic/gin v1.3.0
+# github.com/gin-gonic/gin v1.7.0
 ## explicit
 github.com/gin-gonic/gin
 github.com/gin-gonic/gin/binding
-github.com/gin-gonic/gin/json
+github.com/gin-gonic/gin/internal/bytesconv
+github.com/gin-gonic/gin/internal/json
 github.com/gin-gonic/gin/render
+# github.com/go-playground/locales v0.13.0
+github.com/go-playground/locales
+github.com/go-playground/locales/currency
+# github.com/go-playground/universal-translator v0.17.0
+github.com/go-playground/universal-translator
+# github.com/go-playground/validator/v10 v10.4.1
+github.com/go-playground/validator/v10
 # github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 ## explicit
 github.com/golang/glog
-# github.com/golang/protobuf v1.2.1-0.20190109072247-347cf4a86c1c
-## explicit
+# github.com/golang/protobuf v1.3.3
 github.com/golang/protobuf/proto
 # github.com/gorilla/context v1.1.2-0.20181012153548-51ce91d2eadd
 ## explicit
@@ -51,17 +57,17 @@ github.com/hashicorp/hcl/json/token
 # github.com/inconshreveable/log15 v0.0.0-20180818164646-67afb5ed74ec
 ## explicit
 github.com/inconshreveable/log15/term
-# github.com/json-iterator/go v1.1.6-0.20190114155330-f64ce68b6eea
-## explicit
+# github.com/json-iterator/go v1.1.9
 github.com/json-iterator/go
+# github.com/leodido/go-urn v1.2.0
+github.com/leodido/go-urn
 # github.com/magiconair/properties v1.8.1-0.20190110142458-7757cc9fdb85
 ## explicit
 github.com/magiconair/properties
 # github.com/mattn/go-colorable v0.1.0
 ## explicit
 github.com/mattn/go-colorable
-# github.com/mattn/go-isatty v0.0.5-0.20180830101745-3fb116b82035
-## explicit
+# github.com/mattn/go-isatty v0.0.12
 github.com/mattn/go-isatty
 # github.com/mitchellh/mapstructure v1.1.2
 ## explicit
@@ -107,25 +113,25 @@ github.com/spf13/pflag
 # github.com/spf13/viper v1.3.2-0.20190127094459-d104d259b338
 ## explicit
 github.com/spf13/viper
-# github.com/stretchr/testify v1.2.2
+# github.com/stretchr/testify v1.4.0
 ## explicit
 github.com/stretchr/testify/assert
 # github.com/twinj/uuid v0.1.0
 ## explicit
 github.com/twinj/uuid
-# github.com/ugorji/go/codec v0.0.0-20181209151446-772ced7fd4c2
+# github.com/ugorji/go/codec v1.1.7
 github.com/ugorji/go/codec
 # github.com/xeonx/timeago v1.0.0-rc4
 ## explicit
 github.com/xeonx/timeago
-# golang.org/x/net v0.0.0-20190125091013-d26f9f9a57f3
-## explicit
+# golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
+golang.org/x/crypto/sha3
+# golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3
 golang.org/x/net/websocket
-# golang.org/x/sys v0.0.0-20190130150945-aca44879d564
-## explicit
+# golang.org/x/sys v0.0.0-20200116001909-b77594299b42
+golang.org/x/sys/cpu
 golang.org/x/sys/unix
-# golang.org/x/text v0.3.1-0.20181227161524-e6919f6577db
-## explicit
+# golang.org/x/text v0.3.2
 golang.org/x/text/transform
 golang.org/x/text/unicode/norm
 # gopkg.in/asn1-ber.v1 v1.0.0-20181015200546-f715ec2f112d
@@ -134,8 +140,6 @@ gopkg.in/asn1-ber.v1
 # gopkg.in/fsnotify/fsnotify.v1 v1.4.7
 ## explicit
 gopkg.in/fsnotify/fsnotify.v1
-# gopkg.in/go-playground/validator.v8 v8.18.2
-gopkg.in/go-playground/validator.v8
 # gopkg.in/ldap.v3 v3.0.1
 ## explicit
 gopkg.in/ldap.v3
@@ -145,5 +149,5 @@ gopkg.in/natefinch/lumberjack.v2
 # gopkg.in/stack.v0 v0.0.0-20141108040640-9b43fcefddd0
 ## explicit
 gopkg.in/stack.v0
-# gopkg.in/yaml.v2 v2.2.2
+# gopkg.in/yaml.v2 v2.2.8
 gopkg.in/yaml.v2
