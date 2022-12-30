@@ -23,6 +23,8 @@ github.com/gin-contrib/sse v0.0.0-20190125020943-a7658810eb74/go.mod h1:VJ0WA2NB
 github.com/gin-gonic/gin v1.3.0 h1:kCmZyPklC0gVdL728E6Aj20uYBJV93nj/TkwBTKhFbs=
 github.com/gin-gonic/gin v1.3.0/go.mod h1:7cKuhb5qV2ggCFctp2fJQ+ErvciLZrIeoOSOm6mUr7Y=
 github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8/go.mod h1:xkRDCp4j0OGD1HRkm4kmhM+pmpv3AKq5SU7GMg4oO/Q=
+github.com/go-stack/stack v1.8.1 h1:ntEHSVwIt7PNXNpgPmVfMrNhLtgjlmnZha2kOpuRiDw=
+github.com/go-stack/stack v1.8.1/go.mod h1:dcoOX6HbPZSZptuspn9bctJ+N/CnF5gGygcUP3XYfe4=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b h1:VKtxabqXZkF25pY9ekfRL6a582T4P37/31XEstQ5p58=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfUlaOkMMuAQtPIUF8ecWP5IEl/CR7VP2Q=
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
@@ -80,8 +82,8 @@ github.com/revel/log15 v2.11.20+incompatible h1:JkA4tbwIo/UGEMumY50zndKq816RQW3L
 github.com/revel/log15 v2.11.20+incompatible/go.mod h1:l0WmLRs+IM1hBl4noJiBc2tZQiOgZyXzS1mdmFt+5Gc=
 github.com/revel/pathtree v0.0.0-20140121041023-41257a1839e9 h1:/d6kfjzjyx19ieWqMOXHSTLFuRxLOH15ZubtcAXExKw=
 github.com/revel/pathtree v0.0.0-20140121041023-41257a1839e9/go.mod h1:TmlwoRLDvgRjoTe6rbsxIaka/CulzYrgfef7iNJcEWY=
-github.com/revel/revel v0.21.0 h1:E6kDJmpJSDb0F8XwbyG5h4ayzpZ+8Wcw2IiPZW/2qSc=
-github.com/revel/revel v0.21.0/go.mod h1:VZWJnHjpDEtuGUuZJ2NO42XryitrtwsdVaJxfDeo5yc=
+github.com/revel/revel v1.0.0 h1:BsPFnKuuzXEkPtrjdjZHiDcvDmbBiBQvh7Z5c6kLb/Y=
+github.com/revel/revel v1.0.0/go.mod h1:VZWJnHjpDEtuGUuZJ2NO42XryitrtwsdVaJxfDeo5yc=
 github.com/spf13/afero v1.1.2/go.mod h1:j4pytiNVoe2o6bmDsKpLACNPDBIoEAkihy7loJ1B0CQ=
 github.com/spf13/afero v1.2.1 h1:qgMbHoJbPbw579P+1zVY+6n4nIFuIchaIjzZ/I/Yq8M=
 github.com/spf13/afero v1.2.1/go.mod h1:9ZxEEn6pIJ8Rxe320qSDBk6AsU0r9pR7Q4OcevTdifk=
@@ -127,8 +129,6 @@ gopkg.in/asn1-ber.v1 v1.0.0-20181015200546-f715ec2f112d/go.mod h1:cuepJuh7vyXfUy
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 h1:qIbj1fsPNlZgppZ+VLlY7N33q108Sa+fhmuc+sWQYwY=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
-gopkg.in/fsnotify/fsnotify.v1 v1.4.7 h1:XNNYLJHt73EyYiCZi6+xjupS9CpvmiDgjPTAjrBlQbo=
-gopkg.in/fsnotify/fsnotify.v1 v1.4.7/go.mod h1:Fyux9zXlo4rWoMSIzpn9fDAYjalPqJ/K1qJ27s+7ltE=
 gopkg.in/go-playground/assert.v1 v1.2.1 h1:xoYuJVE7KT85PYWrN730RguIQO0ePzVRfFMXadIrXTM=
 gopkg.in/go-playground/assert.v1 v1.2.1/go.mod h1:9RXL0bg/zibRAgZUYszZSwO/z8Y/a8bDuhia5mkpMnE=
 gopkg.in/go-playground/validator.v8 v8.18.2 h1:lFB4DoMU6B626w8ny76MV7VX6W2VHct2GVOI3xgiMrQ=

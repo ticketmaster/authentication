@@ -6,7 +6,7 @@ package revel
 
 import (
 	"go/build"
-	"log"
+	"net/http"
 	"path/filepath"
 	"strings"
 
@@ -74,7 +74,8 @@ var (
 	// Cookie domain
 	CookieDomain string
 	// Cookie flags
-	CookieSecure bool
+	CookieSecure   bool
+	CookieSameSite http.SameSite
 
 	// Revel request access log, not exposed from package.
 	// However output settings can be controlled from app.conf
@@ -86,6 +87,7 @@ var (
 	secretKey     []byte             // Key used to sign cookies. An empty key disables signing.
 	packaged      bool               // If true, this is running from a pre-built package.
 	initEventList = []EventHandler{} // Event handler list for receiving events
+	packagePathMap = map[string]string{} // The map of the directories needed
 )
 
 // Init initializes Revel -- it provides paths for getting around the app.
@@ -107,17 +109,19 @@ func Init(inputmode, importPath, srcPath string) {
 	var revelSourcePath string // may be different from the app source path
 	if SourcePath == "" {
 		revelSourcePath, SourcePath = findSrcPaths(importPath)
+        BasePath = SourcePath
 	} else {
 		// If the SourcePath was specified, assume both Revel and the app are within it.
 		SourcePath = filepath.Clean(SourcePath)
-		revelSourcePath = SourcePath
+		revelSourcePath = filepath.Join(SourcePath, filepath.FromSlash(RevelImportPath))
+        BasePath = filepath.Join(SourcePath, filepath.FromSlash(importPath))
 		packaged = true
 	}
 
-	RevelPath = filepath.Join(revelSourcePath, filepath.FromSlash(RevelImportPath))
-	BasePath = filepath.Join(SourcePath, filepath.FromSlash(importPath))
+	RevelPath = revelSourcePath //filepath.Join(revelSourcePath, filepath.FromSlash(RevelImportPath))
 	AppPath = filepath.Join(BasePath, "app")
 	ViewsPath = filepath.Join(AppPath, "views")
+	RevelLog.Info("Paths","revel", RevelPath,"base", BasePath,"app", AppPath,"views", ViewsPath)
 
 	CodePaths = []string{AppPath}
 
@@ -172,6 +176,18 @@ func Init(inputmode, importPath, srcPath string) {
 	CookiePrefix = Config.StringDefault("cookie.prefix", "REVEL")
 	CookieDomain = Config.StringDefault("cookie.domain", "")
 	CookieSecure = Config.BoolDefault("cookie.secure", HTTPSsl)
+
+	switch Config.StringDefault("cookie.samesite", "") {
+	case "lax":
+		CookieSameSite = http.SameSiteLaxMode
+	case "strict":
+		CookieSameSite = http.SameSiteStrictMode
+	case "none":
+		CookieSameSite = http.SameSiteNoneMode
+	default:
+		CookieSameSite = http.SameSiteDefaultMode
+	}
+
 	if secretStr := Config.StringDefault("app.secret", ""); secretStr != "" {
 		SetSecretKey([]byte(secretStr))
 	}
@@ -208,6 +224,11 @@ func updateLog(inputmode string) (returnMode string) {
 		if specialUse, found := modemap[SPECIAL_USE_FLAG]; found {
 			specialUseFlag, _ = specialUse.(bool)
 		}
+		if packagePathMapI, found := modemap["packagePathMap"]; found {
+            for k,v := range packagePathMapI.(map[string]interface{}) {
+                packagePathMap[k]=v.(string)
+            }
+        }
 	}
 
 	var newContext *config.Context
@@ -219,7 +240,7 @@ func updateLog(inputmode string) (returnMode string) {
 		// Ensure that the selected runmode appears in app.conf.
 		// If empty string is passed as the mode, treat it as "DEFAULT"
 		if !Config.HasSection(returnMode) {
-			log.Fatalln("app.conf: No mode found:", returnMode)
+			RevelLog.Fatal("app.conf: Run mode not found:","runmode", returnMode)
 		}
 		Config.SetSection(returnMode)
 		newContext = Config
@@ -253,6 +274,9 @@ func ResolveImportPath(importPath string) (string, error) {
 	if packaged {
 		return filepath.Join(SourcePath, importPath), nil
 	}
+	if path,found := packagePathMap[importPath];found {
+        return path, nil
+    }
 
 	modPkg, err := build.Import(importPath, RevelPath, build.FindOnly)
 	if err != nil {
@@ -271,6 +295,9 @@ func CheckInit() {
 // findSrcPaths uses the "go/build" package to find the source root for Revel
 // and the app.
 func findSrcPaths(importPath string) (revelSourcePath, appSourcePath string) {
+    if importFsPath,found := packagePathMap[importPath];found {
+        return packagePathMap[RevelImportPath],importFsPath
+    }
 	var (
 		gopaths = filepath.SplitList(build.Default.GOPATH)
 		goroot  = build.Default.GOROOT
@@ -297,5 +324,5 @@ func findSrcPaths(importPath string) (revelSourcePath, appSourcePath string) {
 		RevelLog.Fatal("Failed to find Revel with error:", "error", err)
 	}
 
-	return revelPkg.Dir[:len(revelPkg.Dir)-len(RevelImportPath)], appPkg.SrcRoot
+	return revelPkg.Dir, appPkg.Dir
 }
