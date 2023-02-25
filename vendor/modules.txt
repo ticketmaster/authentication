@@ -118,13 +118,12 @@ github.com/ugorji/go/codec
 # github.com/xeonx/timeago v1.0.0-rc4
 ## explicit
 github.com/xeonx/timeago
-# golang.org/x/net v0.0.0-20190125091013-d26f9f9a57f3
-## explicit
+# golang.org/x/net v0.0.0-20220722155237-a158d28d115b
 golang.org/x/net/websocket
-# golang.org/x/sys v0.0.0-20190130150945-aca44879d564
-## explicit
+# golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f
+golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
-# golang.org/x/text v0.3.1-0.20181227161524-e6919f6577db
+# golang.org/x/text v0.3.8
 ## explicit
 golang.org/x/text/transform
 golang.org/x/text/unicode/norm
